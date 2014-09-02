@@ -1650,6 +1650,27 @@ DISTRIBUTIONS
       Filesys::Notify::Simple 0.12
     requirements:
       ExtUtils::MakeMaker 6.30
+  Furl-3.03
+    pathname: T/TO/TOKUHIROM/Furl-3.03.tar.gz
+    provides:
+      Furl 3.03
+      Furl::ConnectionCache undef
+      Furl::HTTP 3.03
+      Furl::Headers undef
+      Furl::Request undef
+      Furl::Response undef
+      Furl::ZlibStream undef
+    requirements:
+      Class::Accessor::Lite 0
+      Encode 0
+      HTTP::Parser::XS 0.11
+      MIME::Base64 0
+      Module::Build 0.38
+      Mozilla::CA 0
+      Scalar::Util 0
+      Socket 0
+      Time::HiRes 0
+      perl 5.008001
   HTML-FillInForm-Lite-1.13
     pathname: G/GF/GFUJI/HTML-FillInForm-Lite-1.13.tar.gz
     provides:
@@ -1698,6 +1719,15 @@ DISTRIBUTIONS
       HTML::Tagset 3
       XSLoader 0
       perl 5.008
+  HTML-Selector-XPath-0.18
+    pathname: C/CO/CORION/HTML-Selector-XPath-0.18.tar.gz
+    provides:
+      HTML::Selector::XPath 0.18
+    requirements:
+      ExtUtils::MakeMaker 6.59
+      Test::Base 0
+      Test::More 0
+      perl 5.008001
   HTML-Tagset-3.20
     pathname: P/PE/PETDANCE/HTML-Tagset-3.20.tar.gz
     provides:
@@ -1727,6 +1757,20 @@ DISTRIBUTIONS
       base 0
       integer 0
       perl 5.008
+  HTML-TreeBuilder-XPath-0.14
+    pathname: M/MI/MIROD/HTML-TreeBuilder-XPath-0.14.tar.gz
+    provides:
+      HTML::Element 0.14
+      HTML::TreeBuilder::XPath 0.14
+      HTML::TreeBuilder::XPath::Attribute 0.14
+      HTML::TreeBuilder::XPath::Node 0.14
+      HTML::TreeBuilder::XPath::Root 0.14
+      HTML::TreeBuilder::XPath::TextNode 0.14
+    requirements:
+      ExtUtils::MakeMaker 0
+      HTML::TreeBuilder 0
+      List::Util 0
+      XML::XPathEngine 0.12
   HTTP-Body-1.19
     pathname: G/GE/GETTY/HTTP-Body-1.19.tar.gz
     provides:
@@ -1819,6 +1863,14 @@ DISTRIBUTIONS
       ExtUtils::MakeMaker 0
       HTTP::Headers 6
       perl 5.008001
+  HTTP-Parser-XS-0.16
+    pathname: K/KA/KAZUHO/HTTP-Parser-XS-0.16.tar.gz
+    provides:
+      HTTP::Parser::XS 0.16
+      HTTP::Parser::XS::PP undef
+    requirements:
+      ExtUtils::MakeMaker 6.42
+      Test::More 0.96
   HTTP-Server-Simple-0.44
     pathname: J/JE/JESSE/HTTP-Server-Simple-0.44.tar.gz
     provides:
@@ -1977,6 +2029,18 @@ DISTRIBUTIONS
       ExtUtils::MakeMaker 6.52
       Test::More 0.82
       perl 5.00503
+  Log-Minimal-0.19
+    pathname: K/KA/KAZEBURO/Log-Minimal-0.19.tar.gz
+    provides:
+      Log::Minimal 0.19
+    requirements:
+      CPAN::Meta 0
+      CPAN::Meta::Prereqs 0
+      Data::Dumper 0
+      ExtUtils::CBuilder 0
+      Module::Build 0.38
+      Scalar::Util 0
+      Term::ANSIColor 0
   MRO-Compat-0.12
     pathname: B/BO/BOBTFISH/MRO-Compat-0.12.tar.gz
     provides:
@@ -2643,6 +2707,13 @@ DISTRIBUTIONS
       POSIX 0
       strict 0
       warnings 0
+  Spiffy-0.46
+    pathname: I/IN/INGY/Spiffy-0.46.tar.gz
+    provides:
+      Spiffy 0.46
+      Spiffy::mixin undef
+    requirements:
+      ExtUtils::MakeMaker 6.30
   Starlet-0.24
     pathname: K/KA/KAZUHO/Starlet-0.24.tar.gz
     provides:
@@ -2745,6 +2816,17 @@ DISTRIBUTIONS
       Test::Requires 0
       Test::SharedFork 0.15
       parent 0
+  Test-Base-0.88
+    pathname: I/IN/INGY/Test-Base-0.88.tar.gz
+    provides:
+      Test::Base 0.88
+      Test::Base::Block 0.88
+      Test::Base::Filter undef
+      Test::Base::Handle 0.88
+    requirements:
+      ExtUtils::MakeMaker 6.30
+      Filter::Util::Call 0
+      Spiffy 0.40
   Test-Deep-0.113
     pathname: R/RJ/RJBS/Test-Deep-0.113.tar.gz
     provides:
@@ -3142,6 +3224,40 @@ DISTRIBUTIONS
       Fcntl 0
       URI 1.10
       perl 5.008001
+  Web-Query-0.26
+    pathname: T/TO/TOKUHIROM/Web-Query-0.26.tar.gz
+    provides:
+      Web::Query 0.26
+      Web::Query::LibXML 0.26
+    requirements:
+      CPAN::Meta 0
+      CPAN::Meta::Prereqs 0
+      ExtUtils::CBuilder 0
+      HTML::Entities 0
+      HTML::Selector::XPath 0.06
+      HTML::TreeBuilder::XPath 0.12
+      LWP::UserAgent 6
+      Module::Build 0.38
+      Scalar::Util 0
+      parent 0
+      perl 5.008005
+  XML-XPathEngine-0.14
+    pathname: M/MI/MIROD/XML-XPathEngine-0.14.tar.gz
+    provides:
+      XML::XPathEngine 0.14
+      XML::XPathEngine::Boolean undef
+      XML::XPathEngine::Expr undef
+      XML::XPathEngine::Function undef
+      XML::XPathEngine::Literal undef
+      XML::XPathEngine::LocationPath undef
+      XML::XPathEngine::NodeSet undef
+      XML::XPathEngine::Number undef
+      XML::XPathEngine::Root undef
+      XML::XPathEngine::Step undef
+      XML::XPathEngine::Variable undef
+    requirements:
+      ExtUtils::MakeMaker 0
+      Test::More 0
   bareword-filehandles-0.003
     pathname: I/IL/ILMARI/bareword-filehandles-0.003.tar.gz
     provides:
