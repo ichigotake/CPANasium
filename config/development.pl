@@ -23,9 +23,5 @@ my $basedir = File::Spec->rel2abs(File::Spec->catdir(dirname(__FILE__), '..'));
         client_id => 'CLIENT_ID',
         client_secret => 'CLIENT_SECRET',
     },
-    'Text::Xslate' => {
-        # TODO: Kolon にする
-        syntax => 'TTerse',
-    },
 };
 

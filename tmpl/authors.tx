@@ -1,0 +1,32 @@
+: cascade 'include/layout.tx'
+
+: override content -> {
+
+
+<h1>Authors</h1>
+<div>
+    : include 'include/pager.tx'
+    <table class="table">
+        <thead>
+        <tr>
+          <td></td>
+          <td colspan="2">Author</td>
+          <td>Repos</td>
+        </tr>
+        </thead>
+        <tbody>
+        : for $authors -> $v {
+        <tr>
+	  <td class="span1" style="vertical-align:middle;"><: $~v+(($pager.current_page-1)*$pager.entries_per_page)+1 :></td>
+	  <td class="icon"><: include 'include/icon.tx' {v => $v} :></td>
+	  <td><a href="/user/<: $v.owner_login :>"><: $v.owner_login :></a></td><td><: $v.count :></td>
+	</tr>
+        : }
+        </tbody>
+    </table>
+    : 'include/pager.tx'
+</div>
+
+
+: }
+

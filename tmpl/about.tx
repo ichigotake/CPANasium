@@ -1,4 +1,7 @@
-[% WRAPPER 'include/layout.tt' %]
+: cascade 'include/layout.tx'
+
+: override content -> {
+
 
 <style>
     p {
@@ -25,4 +28,5 @@
     </p>
 </div>
 
-[% END %]
+: }
+

@@ -1,0 +1,10 @@
+: if !$icon_disabled {
+  <td class="icon"><: include 'include/icon.tx' {v => $repo} :></td>
+: }
+<td>
+  <div class="repo-item-header">
+    <a href="/user/<: $repo.full_name :>"><: $name == "name" ? $repo.name : $repo.full_name :></a>
+    <span class="datetime"><: localtime($repo.updated_at).strftime('%Y-%m-%d %H:%M:%S') :></span>
+  </div>
+  <div class="description"><: $repo.description :></div>
+</td>

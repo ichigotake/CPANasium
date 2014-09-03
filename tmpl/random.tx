@@ -1,0 +1,29 @@
+: cascade 'include/layout.tx'
+
+: override content -> {
+
+
+<style>
+    .description {
+        font-size: small;
+        color: #666;
+    }
+</style>
+
+<h1>Random repositories</h1>
+<p>Mikuregatorに登録されてるレポジトリのうち、ランダムに10件表示しています。<a class="btn btn-success" href="/random">更新</a></p>
+<div>
+  <table class="table">
+    : for $repos -> $v {
+    <tr>
+	  <td class="span1" style="vertical-align:middle;"><: $~v+1 :></td>
+	  <td class="icon"><: include 'include/icon.tx' {v => $v} :></td>
+	  <td><a href="/user/<: $v.full_name :>"><: $v.full_name :></a><br><span class="description"><: $v.description :></span></td>
+	  <td style="white-space:nowrap;"><: localtime($v.updated_at).strftime('%Y-%m-%d %H:%M:%S') :></td>
+	</tr>
+    : }
+  </table>
+</div>
+
+: }
+
