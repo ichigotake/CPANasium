@@ -1,4 +1,7 @@
-[% WRAPPER 'include/layout.tt' %]
+: cascade 'include/layout.tx'
+
+: override content -> {
+
 
 <div class="row" style="margin:40px;">
     <p style="text-align: center;">(gist.)githubからみくったーっぽいレポジトリをかき集めるよ！</p>
@@ -30,11 +33,11 @@
                 <tr><th colspan="2">Repository</th></tr>
             </thead>
             <tbody>
-            [% FOR v IN recent_repos %]
-	      <tr>
-                [% INCLUDE 'include/repo.tt' WITH repo = v %]
-              </tr>
-            [% END %]
+            : for $recent_repos -> $v {
+              <tr>
+                <: include 'include/repo.tx' {repo => $v} :>
+             </tr>
+            : }
             </tbody>
         </table>
     </div>
@@ -51,13 +54,14 @@
             </tr>
             </thead>
             <tbody>
-            [% FOR v IN authors %]
-                <tr><td class="icon">[% INCLUDE 'include/icon.tt' WITH v = v %]</td><td><a href="/user/[% v.owner_login %]">[% v.owner_login %]</a></td><td>[% v.count %]</td></tr>
-            [% END %]
+            : for $authors -> $v {
+                <tr><td class="icon"><: include 'include/icon.tx' {v => $v} :></td><td><a href="/user/<: $v.owner_login :>"><: $v.owner_login :></a></td><td><: $v.count :></td></tr>
+            : }
             <tbody>
         </table>
     </div>
 </div>
 
 
-[% END %]
+: }
+

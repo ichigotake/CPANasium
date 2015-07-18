@@ -2,38 +2,38 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>[% title || 'Mikuregator' %]</title>
+    <title><: $title // 'Mikuregator' :></title>
     <meta http-equiv="Content-Style-Type" content="text/css" />
     <meta http-equiv="Content-Script-Type" content="text/javascript" />
     <meta name="format-detection" content="telephone=no" />
-    <script src="[% uri_for('/static/js/jquery-1.9.1.min.js') %]"></script>
-    <script src="[% uri_for('/static/bootstrap/js/bootstrap.js') %]"></script>
-    <script src="[% uri_for('/static/js/es5-shim.min.js') %]"></script>
-    <script src="[% uri_for('/static/js/micro_template.js') %]"></script>
-    <script src="[% uri_for('/static/js/strftime.js') %]"></script>
-    <script src="[% uri_for('/static/js/sprintf-0.7-beta1.js') %]"></script>
-    <script src="[% uri_for('/static/js/micro-location.js') %]"></script>
-    <script src="[% uri_for('/static/js/micro_dispatcher.js') %]"></script>
+    <script src="<: uri_for('/static/js/jquery-1.9.1.min.js') :>"></script>
+    <script src="<: uri_for('/static/bootstrap/js/bootstrap.js') :>"></script>
+    <script src="<: uri_for('/static/js/es5-shim.min.js') :>"></script>
+    <script src="<: uri_for('/static/js/micro_template.js') :>"></script>
+    <script src="<: uri_for('/static/js/strftime.js') :>"></script>
+    <script src="<: uri_for('/static/js/sprintf-0.7-beta1.js') :>"></script>
+    <script src="<: uri_for('/static/js/micro-location.js') :>"></script>
+    <script src="<: uri_for('/static/js/micro_dispatcher.js') :>"></script>
     <link href="//netdna.bootstrapcdn.com/bootswatch/2.3.1/flatly/bootstrap.min.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
-    <link href="[% static_file('/static/css/main.css') %]" rel="stylesheet" type="text/css" media="screen" />
-    <script src="[% static_file('/static/js/main.js') %]"></script>
+    <link href="<: static_file('/static/css/main.css') :>" rel="stylesheet" type="text/css" media="screen" />
+    <script src="<: static_file('/static/js/main.js') :>"></script>
     <!--[if lt IE 9]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 </head>
-<body[% IF bodyID %] id="[% bodyID %]"[% END %]>
+<body<: if ($bodyID) { "\"id=\"<: $bodyID :>\"" } :>>
     <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
             <div class="container">
                 <a class="brand" href="/">Mikuregator</a>
                 <div class="nav-collapse">
                     <ul class="nav">
-                        <li [% IF c().req.path_info=='/' %]class="active"[% END %]><a href="/">Home</a></li>
-                        <li [% IF c().req.path_info=='/recent' %]class="active"[% END %]><a href="/recent">Recent</a></li>
-                        <li [% IF c().req.path_info=='/authors' %]class="active"[% END %]><a href="/authors">Authors</a></li>
-                        <li [% IF c().req.path_info=='/random' %]class="active"[% END %]><a href="/random">Random</a></li>
-                        <li [% IF c().req.path_info=='/about' %]class="active"[% END %]><a href="/about">About</a></li>
+                        <li<: if (c().req.path_info == '/') { " class=active" } :>><a href="/">Home</a></li>
+                        <li<: if (c().req.path_info == '/recent') { " class=active" } :>><a href="/recent">Recent</a></li>
+                        <li<: if (c().req.path_info == '/authors') { " class=active" } :>><a href="/authors">Authors</a></li>
+                        <li<: if (c().req.path_info == '/random') { " class=active" } :>><a href="/random">Random</a></li>
+                        <li<: if (c().req.path_info == '/about') { " class=active" } :>><a href="/about">About</a></li>
                         <li>
                           <form action="/search" method="get" class="form-inline form-horizontal" style="vertical-align:top;margin:0;padding:0;">
                             <input type="text" class="span3" name="keyword" placeholder="keyword">
@@ -48,20 +48,20 @@
     <div class="container">
         <div id="main">
             <div>
-                [% IF count_repos %]
+                : if $count_repos {
                 <strong>Repository</strong>
                 &nbsp;
-                [% FOR h IN count_repos %]
-                <span>[% h.host_type %]: [% h.count %]</span>
-                [% END %]
-                [% END %]
+                : for $count_repos -> $h {
+                <span><: $h.host_type :>: <: $h.count :></span>
+                : }
+                : }
                 &nbsp;&nbsp;
-                [% IF count_authors %]
+                : if $count_authors {
                 <strong>Author</strong>
-                <span>[% count_authors %]</span>
-                [% END %]
+                <span><: $count_authors :></span>
+                : }
             </div>
-            [% content %]
+            : block content -> { }
         </div>
         <footer class="footer">
             Forked by <a href="http://cpanasium.64p.org/">CPANasium</a>

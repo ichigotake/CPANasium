@@ -1,0 +1,30 @@
+: cascade 'include/layout.tx'
+
+: override content -> {
+
+
+<style>
+    .description {
+        font-size: small;
+        color: #666;
+    }
+</style>
+
+<h1>Recent repositories</h1>
+<div>
+    : include 'include/pager.tx'
+    <table class="table">
+        : for $recent_repos -> $v {
+        <tr>
+          <td style="vertical-align:middle;"><span class="col-index"><: $~v+(($pager.current_page-1)*$pager.entries_per_page)+1 :></span></td>
+          <td class="icon"><: include 'include/icon.tx' {v => $v} :></td>
+	  <td><a href="/user/<: $v.full_name :>"><: $v.full_name :></a><br><span class="description"><: $v.description :></span></td>
+	  <td style="white-space:nowrap;"><: localtime($v.updated_at).strftime('%Y-%m-%d %H:%M:%S') :></td>
+	</tr>
+        : }
+    </table>
+    : include 'include/pager.tx'
+</div>
+
+: }
+

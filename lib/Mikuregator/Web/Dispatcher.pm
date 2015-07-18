@@ -2,7 +2,7 @@ package Mikuregator::Web::Dispatcher;
 use strict;
 use warnings;
 use utf8;
-use Amon2::Web::Dispatcher::Lite;
+use Amon2::Web::Dispatcher::RouterBoom;
 
 any '/' => sub {
     my ($c) = @_;
@@ -22,7 +22,7 @@ any '/' => sub {
     });
     my @recent_repos = $c->db->search_by_sql(q{select host_type, owner_login, owner_avatar_url, full_name, html_url, description, created_at, updated_at from repos order by updated_at desc limit 10;});
 
-    return $c->render('index.tt', {
+    return $c->render('index.tx', {
         authors      => \@authors,
         recent_repos => \@recent_repos,
         count_repos  => \@count_repos,
@@ -32,17 +32,18 @@ any '/' => sub {
 
 get '/about' => sub {
     my ($c) = @_;
-    return $c->render('about.tt');
+    return $c->render('about.tx');
 };
 
 get '/authors' => sub {
     my ($c) = @_;
     my $page = $c->req->param('page') || 1;
     my ($authors, $pager) = $c->db->search_with_pager(
-        'repos' => {},
+        'repos',
+        {},
             {group_by => 'owner_login', order_by => 'count(*) desc', page => $page, rows => 30,
             columns => [\'count(*) as count', 'owner_login', 'owner_avatar_url']});
-    return $c->render('authors.tt', {
+    return $c->render('authors.tx', {
         authors => $authors,
         pager   => $pager,
     });
@@ -54,7 +55,7 @@ get '/recent' => sub {
 
     my $page = $c->req->param('page') || 1;
     my ($recent_repos, $pager) = $c->db->search_with_pager('repos' => {}, {order_by => 'updated_at desc', page => $page, rows => 50});
-    return $c->render('recent.tt', {
+    return $c->render('recent.tx', {
         recent_repos => $recent_repos,
         pager => $pager,
     });
@@ -69,7 +70,7 @@ get '/user/:user' => sub {
         [$user],
     );
 
-    return $c->render('user.tt', {
+    return $c->render('user.tx', {
         user => $user,
         repos => \@repos,
     });
@@ -84,7 +85,7 @@ get '/user/:user/:module' => sub {
         q{SELECT * FROM repos WHERE full_name=?},
         [$user . '/' . $module],
     ) or die "not found: $user/$module";
-    return $c->render('repo.tt', {
+    return $c->render('repo.tx', {
         repo => $repo,
     });
 };
@@ -101,7 +102,7 @@ get '/search' => sub {
         page => $c->req->param('page') || 1,
     );
 
-    return $c->render('search.tt', {
+    return $c->render('search.tx', {
         recent_repos => $recent_repos,
         pager => $pager,
         keyword => $keyword,
@@ -113,7 +114,7 @@ any '/random' => sub {
 
     my @repos = $c->db->search_by_sql(q{select * from repos order by rand() limit 10});
 
-    return $c->render('random.tt', {
+    return $c->render('random.tx', {
         repos => \@repos,
     });
 };
