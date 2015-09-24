@@ -6,13 +6,8 @@
     <meta http-equiv="Content-Style-Type" content="text/css" />
     <meta http-equiv="Content-Script-Type" content="text/javascript" />
     <meta name="format-detection" content="telephone=no" />
-    <script src="[% uri_for('/static/bootstrap/js/bootstrap.js') %]"></script>
-    <link href="//netdna.bootstrapcdn.com/bootswatch/2.3.1/flatly/bootstrap.min.css" rel="stylesheet">
+    <link href="[% uri_for('/static/bootstrap/css/bootstrap.min.css') %]" rel="stylesheet">
     <link href="[% static_file('/static/css/main.css') %]" rel="stylesheet" type="text/css" media="screen" />
-    <script src="[% static_file('/static/js/main.js') %]"></script>
-    <!--[if lt IE 9]>
-        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
 </head>
 <body[% IF bodyID %] id="[% bodyID %]"[% END %]>
     <div class="navbar navbar-fixed-top">
@@ -60,4 +55,9 @@
         </footer>
     </div>
 </body>
+<script src="[% static_file('/static/js/main.js') %]"></script>
+<script src="[% uri_for('/static/bootstrap/js/bootstrap.min.js') %]"></script>
+<!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
 </html>
