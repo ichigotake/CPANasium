@@ -9,22 +9,28 @@ any '/' => sub {
 
     my @count_repos = $c->db->search_by_sql(q{select host_type, count(host_type) as `count` from repos group by host_type});
     my @count_authors = $c->db->search_by_sql(q{select distinct(owner_login) from repos});
-    my @authors = $c->db->search_by_sql(q{
-        select
-	    owner_login,
-	    host_type,
-	    owner_avatar_url,
-	    count(*) as count
-	        from (select * from repos order by updated_at desc limit 0,50) as repos
-		    group by owner_login
-		    order by count desc
-		    limit 0,10; 
-    });
-    my @recent_repos = $c->db->search_by_sql(q{select host_type, owner_login, owner_avatar_url, full_name, html_url, description, created_at, updated_at from repos order by updated_at desc limit 10;});
+    my @recent_repo_id = ();
+    my @recent_repos = $c->db->search_by_sql(q{select id,host_type, owner_login, owner_avatar_url, full_name, html_url, description, created_at, updated_at from repos order by updated_at desc limit 50;});
 
+    my $first_updated_at;
+    if (scalar(@recent_repos) >= 50) {
+        $first_updated_at = $recent_repos[49]->{row_data}->{updated_at}
+    } else {
+        $first_updated_at = $recent_repos[scalar(@recent_repos)-1]->{row_data}->{updated_at};
+    }
+    for my $r (@recent_repos) {
+        push(@recent_repo_id, $r->{row_data}->{id});
+    }
+    my @authors = $c->db->search_by_sql(q{
+        select owner_login,owner_avatar_url,count(*) as count from repos
+            where updated_at >= ?
+            group by owner_login
+            order by count desc
+            limit 0,10
+    }, [$first_updated_at]);
     return $c->render('index.tt', {
         authors      => \@authors,
-        recent_repos => \@recent_repos,
+        recent_repos => [@recent_repos[0..9]],
         count_repos  => \@count_repos,
         count_authors  => scalar @count_authors,
     });
