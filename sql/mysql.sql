@@ -19,6 +19,7 @@ CREATE TABLE repos (
     index (owner_login),
     unique (full_name),
     index (updated_at)
+    index (host_type)
 ) ENGINE=InnoDB charset=utf8;
 
 create table deps (
