@@ -3,6 +3,14 @@ Mikuregator
 
 (gist.)githubからみくったー関連のレポジトリをかき集めるよ！
 
+Run
+----
+
+```sh
+carton install
+carton exec -- plackup -E production -s Starlet -p 4444
+```
+
 Plan
 ----
 
