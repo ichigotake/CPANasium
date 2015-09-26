@@ -51,7 +51,7 @@
             [% content %]
         </div>
         <footer class="footer">
-            Forked by <a href="http://cpanasium.64p.org/">CPANasium</a>
+            Forked from <a href="http://cpanasium.64p.org/">CPANasium</a>
         </footer>
     </div>
 </body>
