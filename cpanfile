@@ -33,6 +33,7 @@ requires 'Plack::Session'                  => '0.14';
 requires 'Plack::Session::State::Cookie';
 requires 'Plack::Session::Store::DBI';
 requires 'Pod::Usage';
+requires 'Starlet';
 requires 'Teng',                            '0.18';
 requires 'Teng::Schema::Loader';
 requires 'Test::WWW::Mechanize::PSGI'      => '0';

@@ -14,6 +14,7 @@ DISTRIBUTIONS
       Amon2::Plugin::Web::NoCache undef
       Amon2::Plugin::Web::PlackSession undef
       Amon2::Plugin::Web::Streaming undef
+      Amon2::Plugin::Web::Streaming::Writer undef
       Amon2::Plugin::Web::WebSocket undef
       Amon2::Setup::Asset::Blueprint undef
       Amon2::Setup::Asset::Bootstrap undef
@@ -76,57 +77,54 @@ DISTRIBUTIONS
     requirements:
       Module::Build 0.3601
       Test::Exception 0
-  CPAN-Meta-2.132140
-    pathname: D/DA/DAGOLDEN/CPAN-Meta-2.132140.tar.gz
+  CPAN-Meta-2.150005
+    pathname: D/DA/DAGOLDEN/CPAN-Meta-2.150005.tar.gz
     provides:
-      CPAN::Meta 2.132140
-      CPAN::Meta::Converter 2.132140
-      CPAN::Meta::Feature 2.132140
-      CPAN::Meta::History 2.132140
-      CPAN::Meta::Prereqs 2.132140
-      CPAN::Meta::Spec 2.132140
-      CPAN::Meta::Validator 2.132140
+      CPAN::Meta 2.150005
+      CPAN::Meta::Converter 2.150005
+      CPAN::Meta::Feature 2.150005
+      CPAN::Meta::History 2.150005
+      CPAN::Meta::Merge 2.150005
+      CPAN::Meta::Prereqs 2.150005
+      CPAN::Meta::Spec 2.150005
+      CPAN::Meta::Validator 2.150005
     requirements:
       CPAN::Meta::Requirements 2.121
       CPAN::Meta::YAML 0.008
       Carp 0
-      ExtUtils::MakeMaker 6.30
+      ExtUtils::MakeMaker 6.17
       JSON::PP 2.27200
-      Parse::CPAN::Meta 1.4403
+      Parse::CPAN::Meta 1.4414
       Scalar::Util 0
+      perl 5.008
       strict 0
       version 0.88
       warnings 0
-  CPAN-Meta-Requirements-2.122
-    pathname: D/DA/DAGOLDEN/CPAN-Meta-Requirements-2.122.tar.gz
+  CPAN-Meta-Requirements-2.133
+    pathname: D/DA/DAGOLDEN/CPAN-Meta-Requirements-2.133.tar.gz
     provides:
-      CPAN::Meta::Requirements 2.122
+      CPAN::Meta::Requirements 2.133
     requirements:
+      B 0
       Carp 0
       ExtUtils::MakeMaker 6.17
-      File::Find 0
-      File::Temp 0
-      Scalar::Util 0
-      Test::More 0.88
+      perl 5.006
       strict 0
-      version 0.77
+      version 0.88
       warnings 0
-  CPAN-Meta-YAML-0.008
-    pathname: D/DA/DAGOLDEN/CPAN-Meta-YAML-0.008.tar.gz
+  CPAN-Meta-YAML-0.016
+    pathname: D/DA/DAGOLDEN/CPAN-Meta-YAML-0.016.tar.gz
     provides:
-      CPAN::Meta::YAML 0.008
+      CPAN::Meta::YAML 0.016
     requirements:
+      B 0
       Carp 0
       Exporter 0
       ExtUtils::MakeMaker 6.17
-      File::Find 0
-      File::Spec 0
-      File::Spec::Functions 0
-      File::Temp 0
+      Fcntl 0
       Scalar::Util 0
-      Test::More 0
+      perl 5.008001
       strict 0
-      vars 0
       warnings 0
   Cache-Cache-1.06
     pathname: J/JS/JSWARTZ/Cache-Cache-1.06.tar.gz
@@ -213,16 +211,7 @@ DISTRIBUTIONS
     pathname: D/DR/DROLSKY/Class-Load-0.20.tar.gz
     provides:
       Class::Load 0.20
-      Class::Load::Error::DieAfterBeginIsa undef
-      Class::Load::Error::DieAfterIsa undef
-      Class::Load::Error::SyntaxErrorAfterIsa undef
-      Class::Load::OK undef
       Class::Load::PP 0.20
-      Class::Load::Stash undef
-      Class::Load::Stash::Sub undef
-      Class::Load::SyntaxError undef
-      Class::Load::VersionCheck 42
-      Class::Load::VersionCheck2 42
     requirements:
       Carp 0
       Data::OptList 0
@@ -441,7 +430,6 @@ DISTRIBUTIONS
       Data::Page 2.02
     requirements:
       Class::Accessor::Chained::Fast 0
-      Module::Build 0.35
       Test::Exception 0
       Test::More 0
   Data-Page-Navigation-0.06
@@ -517,45 +505,7 @@ DISTRIBUTIONS
   Dist-CheckConflicts-0.09
     pathname: D/DO/DOY/Dist-CheckConflicts-0.09.tar.gz
     provides:
-      Bar 0.02
-      Bar::Bar 0.01
-      Bar::Bar::Bad 0.01
-      Bar::Bar::Good 0.02
-      Bar::Baz 0.02
-      Bar::Baz::Bad 0.01
-      Bar::Baz::Good 0.02
-      Bar::Conflicts undef
-      Bar::Conflicts2 undef
-      Bar::Conflicts3 undef
-      Bar::Conflicts::Bad undef
-      Bar::Conflicts::Bad2 undef
-      Bar::Conflicts::Bad3 undef
-      Bar::Conflicts::Good undef
-      Bar::Conflicts::Good2 undef
-      Bar::Conflicts::Good3 undef
-      Bar::Foo 0.01
-      Bar::Foo::Bad 0.01
-      Bar::Foo::Good 0.02
-      Bar::Quux 0.02
-      Bar::Quux::Bad 0.01
-      Bar::Quux::Good 0.02
-      Bar::Three 0.02
-      Bar::Two 0.02
-      Broken undef
       Dist::CheckConflicts 0.09
-      Foo undef
-      Foo::Bar 0.01
-      Foo::Baz 0.02
-      Foo::Conflicts undef
-      Foo::Conflicts2 undef
-      Foo::Conflicts::Bad undef
-      Foo::Conflicts::Broken undef
-      Foo::Conflicts::Good undef
-      Foo::Foo 0.01
-      Foo::Quux 0.02
-      Foo::Thing 0.02
-      Foo::Three 0.02
-      Foo::Two 0.02
     requirements:
       Carp 0
       Exporter 0
@@ -579,6 +529,9 @@ DISTRIBUTIONS
     pathname: S/SH/SHLOMIF/Error-0.17020.tar.gz
     provides:
       Error 0.17020
+      Error::Simple 0.17020
+      Error::WarnDie 0.17020
+      Error::subs 0.17020
     requirements:
       Module::Build 0.39
       Scalar::Util 0
@@ -632,6 +585,52 @@ DISTRIBUTIONS
       Test::More 0
       strict 0
       warnings 0
+  ExtUtils-MakeMaker-7.10
+    pathname: B/BI/BINGOS/ExtUtils-MakeMaker-7.10.tar.gz
+    provides:
+      ExtUtils::Command 7.10
+      ExtUtils::Command::MM 7.10
+      ExtUtils::Liblist 7.10
+      ExtUtils::Liblist::Kid 7.10
+      ExtUtils::MM 7.10
+      ExtUtils::MM_AIX 7.10
+      ExtUtils::MM_Any 7.10
+      ExtUtils::MM_BeOS 7.10
+      ExtUtils::MM_Cygwin 7.10
+      ExtUtils::MM_DOS 7.10
+      ExtUtils::MM_Darwin 7.10
+      ExtUtils::MM_MacOS 7.10
+      ExtUtils::MM_NW5 7.10
+      ExtUtils::MM_OS2 7.10
+      ExtUtils::MM_QNX 7.10
+      ExtUtils::MM_UWIN 7.10
+      ExtUtils::MM_Unix 7.10
+      ExtUtils::MM_VMS 7.10
+      ExtUtils::MM_VOS 7.10
+      ExtUtils::MM_Win32 7.10
+      ExtUtils::MM_Win95 7.10
+      ExtUtils::MY 7.10
+      ExtUtils::MakeMaker 7.10
+      ExtUtils::MakeMaker::Config 7.10
+      ExtUtils::MakeMaker::Locale 7.10
+      ExtUtils::MakeMaker::_version 7.10
+      ExtUtils::MakeMaker::charstar 7.10
+      ExtUtils::MakeMaker::version 7.10
+      ExtUtils::MakeMaker::version::regex 7.10
+      ExtUtils::MakeMaker::version::vpp 7.10
+      ExtUtils::Mkbootstrap 7.10
+      ExtUtils::Mksymlists 7.10
+      ExtUtils::testlib 7.10
+      MM 7.10
+      MY 7.10
+    requirements:
+      Data::Dumper 0
+      DirHandle 0
+      Encode 0
+      File::Basename 0
+      File::Spec 0.8
+      Pod::Man 0
+      perl 5.006
   File-Copy-Recursive-0.38
     pathname: D/DM/DMUEY/File-Copy-Recursive-0.38.tar.gz
     provides:
@@ -866,7 +865,6 @@ DISTRIBUTIONS
       HTTP::Body::UrlEncoded 1.17
       HTTP::Body::XForms 1.17
       HTTP::Body::XFormsMultipart 1.17
-      PAML undef
     requirements:
       Carp 0
       Digest::MD5 0
@@ -963,24 +961,24 @@ DISTRIBUTIONS
     pathname: J/JE/JESSE/HTTP-Server-Simple-0.44.tar.gz
     provides:
       HTTP::Server::Simple 0.44
-      HTTP::Server::Simple::CGI undef
-      HTTP::Server::Simple::CGI::Environment undef
     requirements:
       CGI 0
       ExtUtils::MakeMaker 6.42
       Socket 0
       Test::More 0
-  HTTP-Tiny-0.034
-    pathname: D/DA/DAGOLDEN/HTTP-Tiny-0.034.tar.gz
+  HTTP-Tiny-0.056
+    pathname: D/DA/DAGOLDEN/HTTP-Tiny-0.056.tar.gz
     provides:
-      HTTP::Tiny 0.034
+      HTTP::Tiny 0.056
     requirements:
       Carp 0
-      ExtUtils::MakeMaker 6.30
+      ExtUtils::MakeMaker 6.17
+      Fcntl 0
       IO::Socket 0
       MIME::Base64 0
       Time::Local 0
       bytes 0
+      perl 5.006
       strict 0
       warnings 0
   Hash-MultiValue-0.15
@@ -1000,6 +998,14 @@ DISTRIBUTIONS
       ExtUtils::MakeMaker 6.30
       File::Temp 0
       Scalar::Util 0
+      Test::More 0.88
+  IO-Socket-IP-0.37
+    pathname: P/PE/PEVANS/IO-Socket-IP-0.37.tar.gz
+    provides:
+      IO::Socket::IP 0.37
+    requirements:
+      IO::Socket 0
+      Socket 1.97
       Test::More 0.88
   IO-Socket-SSL-1.953
     pathname: S/SU/SULLR/IO-Socket-SSL-1.953.tar.gz
@@ -1022,6 +1028,12 @@ DISTRIBUTIONS
       ExtUtils::MakeMaker 0
       Test::More 0.31
       Time::HiRes 0
+  IPC-Signal-1.00
+    pathname: R/RO/ROSCH/IPC-Signal-1.00.tar.gz
+    provides:
+      IPC::Signal 1.00
+    requirements:
+      ExtUtils::MakeMaker 0
   JSON-2.59
     pathname: M/MA/MAKAMAKA/JSON-2.59.tar.gz
     provides:
@@ -1110,7 +1122,6 @@ DISTRIBUTIONS
   Module-Build-Tiny-0.025
     pathname: L/LE/LEONT/Module-Build-Tiny-0.025.tar.gz
     provides:
-      DistGen 0.01
       Module::Build::Tiny 0.025
     requirements:
       CPAN::Meta 0
@@ -1158,10 +1169,6 @@ DISTRIBUTIONS
     pathname: D/DR/DROLSKY/Module-Implementation-0.07.tar.gz
     provides:
       Module::Implementation 0.07
-      T::Impl1 undef
-      T::Impl2 undef
-      T::ImplFails1 undef
-      T::ImplFails2 undef
     requirements:
       Carp 0
       ExtUtils::MakeMaker 6.30
@@ -1282,11 +1289,8 @@ DISTRIBUTIONS
   Package-Stash-0.35
     pathname: D/DO/DOY/Package-Stash-0.35.tar.gz
     provides:
-      CompileTime undef
       Package::Stash 0.35
       Package::Stash::PP 0.35
-      inc::DistMeta undef
-      inc::MMPackageStash undef
     requirements:
       B 0
       Carp 0
@@ -1309,13 +1313,28 @@ DISTRIBUTIONS
   Package-Stash-XS-0.28
     pathname: D/DO/DOY/Package-Stash-XS-0.28.tar.gz
     provides:
-      CompileTime undef
       Package::Stash::XS 0.28
     requirements:
       ExtUtils::MakeMaker 6.30
       XSLoader 0
       strict 0
       warnings 0
+  Parallel-Prefork-0.17
+    pathname: K/KA/KAZUHO/Parallel-Prefork-0.17.tar.gz
+    provides:
+      Parallel::Prefork 0.17
+      Parallel::Prefork::SpareWorkers undef
+      Parallel::Prefork::SpareWorkers::Scoreboard undef
+    requirements:
+      Class::Accessor::Lite 0.04
+      ExtUtils::MakeMaker 6.42
+      List::MoreUtils 0
+      Proc::Wait3 0.03
+      Scope::Guard 0
+      Signal::Mask 0
+      Test::Requires 0
+      Test::SharedFork 0
+      perl 5.008001
   Params-Util-1.07
     pathname: A/AD/ADAMK/Params-Util-1.07.tar.gz
     provides:
@@ -1327,18 +1346,19 @@ DISTRIBUTIONS
       Scalar::Util 1.18
       Test::More 0.42
       perl 5.00503
-  Parse-CPAN-Meta-1.4405
-    pathname: D/DA/DAGOLDEN/Parse-CPAN-Meta-1.4405.tar.gz
+  Parse-CPAN-Meta-1.4417
+    pathname: D/DA/DAGOLDEN/Parse-CPAN-Meta-1.4417.tar.gz
     provides:
-      Parse::CPAN::Meta 1.4405
+      Parse::CPAN::Meta 1.4417
     requirements:
-      CPAN::Meta::YAML 0.008
+      CPAN::Meta::YAML 0.011
       Carp 0
+      Encode 0
       Exporter 0
-      ExtUtils::MakeMaker 6.30
+      ExtUtils::MakeMaker 0
       File::Spec 0.80
       JSON::PP 2.27200
-      Test::More 0.47
+      perl 5.008001
       strict 0
   Pithub-0.01020
     pathname: A/AN/ANDREMAR/Pithub-0.01020.tar.gz
@@ -1526,6 +1546,12 @@ DISTRIBUTIONS
       ExtUtils::MakeMaker 6.30
       File::Spec 0
       strict 0
+  Proc-Wait3-0.04
+    pathname: C/CT/CTILMES/Proc-Wait3-0.04.tar.gz
+    provides:
+      Proc::Wait3 0.04
+    requirements:
+      ExtUtils::MakeMaker 0
   Role-Tiny-1.003001
     pathname: H/HA/HAARG/Role-Tiny-1.003001.tar.gz
     provides:
@@ -1581,6 +1607,34 @@ DISTRIBUTIONS
       Scalar::Util 0
       parent 0
       perl 5.008001
+  Scope-Guard-0.21
+    pathname: C/CH/CHOCOLATE/Scope-Guard-0.21.tar.gz
+    provides:
+      Scope::Guard 0.21
+    requirements:
+      ExtUtils::MakeMaker 0
+      Test::More 0
+      perl 5.006001
+  Server-Starter-0.32
+    pathname: K/KA/KAZUHO/Server-Starter-0.32.tar.gz
+    provides:
+      Server::Starter 0.32
+      Server::Starter::Guard undef
+    requirements:
+      Module::Build 0.38
+      perl 5.008
+  Signal-Mask-0.008
+    pathname: L/LE/LEONT/Signal-Mask-0.008.tar.gz
+    provides:
+      Signal::Mask 0.008
+      Signal::Pending 0.008
+    requirements:
+      Carp 0
+      ExtUtils::MakeMaker 6.30
+      IPC::Signal 0
+      POSIX 0
+      strict 0
+      warnings 0
   Spiffy-0.31
     pathname: I/IN/INGY/Spiffy-0.31.tar.gz
     provides:
@@ -1589,6 +1643,21 @@ DISTRIBUTIONS
     requirements:
       ExtUtils::MakeMaker 6.59
       perl 5.006001
+  Starlet-0.25
+    pathname: K/KA/KAZUHO/Starlet-0.25.tar.gz
+    provides:
+      Plack::Handler::Starlet undef
+      Starlet 0.25
+      Starlet::Server undef
+    requirements:
+      ExtUtils::MakeMaker 6.59
+      LWP::UserAgent 5.8
+      Parallel::Prefork 0.13
+      Plack 0.992
+      Server::Starter 0.06
+      Test::More 0.88
+      Test::TCP 2.1
+      perl 5.008001
   Stream-Buffered-0.02
     pathname: D/DO/DOY/Stream-Buffered-0.02.tar.gz
     provides:
@@ -1751,7 +1820,6 @@ DISTRIBUTIONS
     provides:
       Test::Exception 0.32
     requirements:
-      Module::Build 0.38
       Sub::Uplevel 0.18
       Test::Builder 0.7
       Test::Builder::Tester 1.07
@@ -1865,33 +1933,32 @@ DISTRIBUTIONS
       Test::Builder::Tester 1.02
       Test::More 0.62
       blib 0
-  Test-SharedFork-0.21
-    pathname: T/TO/TOKUHIROM/Test-SharedFork-0.21.tar.gz
+  Test-SharedFork-0.33
+    pathname: E/EX/EXODIST/Test-SharedFork-0.33.tar.gz
     provides:
-      Test::SharedFork 0.21
+      Test::SharedFork 0.33
       Test::SharedFork::Array undef
       Test::SharedFork::Scalar undef
       Test::SharedFork::Store undef
     requirements:
-      App::Prove 0
-      ExtUtils::MakeMaker 6.59
+      ExtUtils::MakeMaker 0
+      File::Temp 0
+      Test::Builder 0.32
+      Test::Builder::Module 0
       Test::More 0.88
-      Test::Requires 0
-      Time::HiRes 0
-      perl 5.008
-  Test-TCP-2.00
-    pathname: T/TO/TOKUHIROM/Test-TCP-2.00.tar.gz
+      perl 5.008_001
+  Test-TCP-2.13
+    pathname: T/TO/TOKUHIROM/Test-TCP-2.13.tar.gz
     provides:
       Net::EmptyPort undef
-      Test::TCP 2.00
+      Test::TCP 2.13
       Test::TCP::CheckPort undef
     requirements:
-      CPAN::Meta 0
-      CPAN::Meta::Prereqs 0
+      ExtUtils::MakeMaker 6.64
       IO::Socket::INET 0
-      Module::Build 0.38
+      IO::Socket::IP 0
       Test::More 0
-      Test::SharedFork 0.19
+      Test::SharedFork 0.29
       Time::HiRes 0
       perl 5.008001
   Test-Tester-0.109
@@ -1947,18 +2014,6 @@ DISTRIBUTIONS
       Test::More 0
       Tree::DAG_Node 1.02
       perl 5.006
-  Test-mysqld-0.17
-    pathname: K/KA/KAZUHO/Test-mysqld-0.17.tar.gz
-    provides:
-      Test::mysqld 0.17
-    requirements:
-      Class::Accessor::Lite 0
-      DBD::mysql 0
-      DBI 0
-      ExtUtils::MakeMaker 6.42
-      File::Copy::Recursive 0
-      Test::SharedFork 0.06
-      perl 5.008
   Text-Xslate-2.0009
     pathname: G/GF/GFUJI/Text-Xslate-2.0009.tar.gz
     provides:
@@ -2021,7 +2076,6 @@ DISTRIBUTIONS
   UNIVERSAL-can-1.20120726
     pathname: C/CH/CHROMATIC/UNIVERSAL-can-1.20120726.tar.gz
     provides:
-      Test::SmallWarn undef
       UNIVERSAL::can 1.20120726
     requirements:
       ExtUtils::MakeMaker 6.30
